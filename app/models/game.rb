@@ -6,6 +6,5 @@ class Game < ApplicationRecord
        presence: true
     validates :genre, length: { maximum: 140 },
        presence: true
-    validates :publisher, length: { maximum: 140 },
-       presence: true
+    validates :publisher, presence: true
 end
