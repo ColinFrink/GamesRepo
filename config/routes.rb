@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
   get 'users/new'
   get  '/signup',  to: 'users#new'
 
@@ -10,6 +15,8 @@ Rails.application.routes.draw do
   resources :games
   resources :users
   post '/signup',  to: 'users#create'
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
