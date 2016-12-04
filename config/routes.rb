@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   get 'static_pages/home'
   get  '/about',   to: 'static_pages#about'
 
-  resources :publishers
   root 'static_pages#home'
+  resources :publishers
   resources :games
+  resources :users
+  post '/signup',  to: 'users#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
