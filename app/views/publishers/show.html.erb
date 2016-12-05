@@ -10,5 +10,14 @@
   <%= @publisher.location %>
 </p>
 
+   <ul>
+         <% @publisher.games.each do |game| %>
+            <li>
+              <%= game.name %>
+            </li>
+         <% end %>
+   </ul>
+
 <%= link_to 'Edit', edit_publisher_path(@publisher) %> |
 <%= link_to 'Back', publishers_path %>
+ 
