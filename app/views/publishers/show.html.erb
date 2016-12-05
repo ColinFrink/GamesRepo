@@ -10,17 +10,23 @@
   <%= @publisher.location %>
 </p>
 
-<p>
-  <strong>Games:</strong>
-   <ul>
+<% if @publisher.games.exists? %> 
+  <p>
+
+    <strong>Games:</strong>
+ 
+       <ul>
          <% @publisher.games.each do |game| %>
             <li>
               <%= game.name %>
             </li>
          <% end %>
-   </ul>
-</p>
-
+       </ul>
+  </p>
+<% else %>
+  <p><strong>No Games Listed</strong> <br>
+  why don't you add one?</p>
+<% end %>
 <%= link_to 'Edit', edit_publisher_path(@publisher) %> |
 <%= link_to 'Back', publishers_path %>
  
