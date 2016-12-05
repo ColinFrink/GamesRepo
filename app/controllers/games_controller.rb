@@ -62,6 +62,15 @@ class GamesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search
+    name = params[:search] + '%'
+    @games = Game.where(['name LIKE ?', name])
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

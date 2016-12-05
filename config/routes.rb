@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :games
   resources :users
   post '/signup',  to: 'users#create'
+  post '/search', to: 'games#search'
   
   get  '/games',   to: 'games#index'
   get  '/publishers',   to: 'publishers#index'
