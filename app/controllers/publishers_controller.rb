@@ -11,6 +11,10 @@ class PublishersController < ApplicationController
   # GET /publishers/1
   # GET /publishers/1.json
   def show
+    if @publisher.games.empty?
+      flash[:danger] = "Publisher has no games, create one here!"
+      redirect_to games_path
+    end
   end
 
   # GET /publishers/new
