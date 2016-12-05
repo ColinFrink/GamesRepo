@@ -20,5 +20,7 @@
   <%= @game.publisher.name %>
 </p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
+<% if logged_in? %>
+  <%= link_to 'Edit', edit_game_path(@game) %> |
+<% end %>
 <%= link_to 'Back', games_path %>
