@@ -4,7 +4,8 @@ class PublishersController < ApplicationController
   # GET /publishers
   # GET /publishers.json
   def index
-    @publishers = Publisher.all
+    #@publishers = Publisher.all
+    @publishers = Publisher.paginate(page: params[:page], :per_page => 10)
   end
 
   # GET /publishers/1
