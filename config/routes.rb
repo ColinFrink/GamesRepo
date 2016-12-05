@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :games
   resources :users
   post '/signup',  to: 'users#create'
+  post '/search', to: 'games#search'
   
 
   # The priority is based upon order of creation: first created -> highest priority.
