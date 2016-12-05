@@ -7,4 +7,5 @@ class Game < ApplicationRecord
     validates :genre, length: { maximum: 140 },
        presence: true
     validates :publisher, presence: true
+    has_many :users
 end

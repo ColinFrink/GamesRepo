@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204220523) do
+ActiveRecord::Schema.define(version: 20161204220523) do #IDK what this is... Colin's Number
+#ActiveRecord::Schema.define(version: 20161205002704) do #Jon's number
 
   create_table "games", force: :cascade do |t|
     t.string   "name"
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 20161204220523) do
     t.datetime "updated_at",                      null: false
     t.string   "password_digest"
     t.boolean  "admin",           default: false
+    t.string   "game_name"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
