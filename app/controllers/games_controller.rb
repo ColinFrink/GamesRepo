@@ -4,7 +4,9 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    #@games = Game.all
+    @games = Game.paginate(page: params[:page], :per_page => 6)
+    #@game = Game.paginate :page => params[:page], :per_page => 5
   end
 
   # GET /games/1
