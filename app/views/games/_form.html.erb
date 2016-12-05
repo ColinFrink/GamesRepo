@@ -27,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :publisher_id %>
-    <%= f.number_field :publisher_id %>
+    <%= f.label :publisher %>
+    <%= f.select :publisher_id, options_for_select(Publisher.all.map{|s|[s.name, s.id]}) %>
   </div>
 
   <div class="actions">
